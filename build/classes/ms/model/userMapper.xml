@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="UserMapper">
+    
+    <cache type="org.mybatis.caches.ehcache.LoggingEhcache" >
+        <property name="timeToIdleSeconds" value="3600"/><!--1 hour 缓存自创建日期起至失效时的间隔时间-->
+	    <property name="timeToLiveSeconds" value="3600"/><!--1 hour 缓存创建以后，最后一次访问缓存的日期至失效之时的时间间隔-->
+	    <property name="maxEntriesLocalHeap" value="1000"/>
+	    <property name="maxEntriesLocalDisk" value="10000000"/>
+	    <property name="memoryStoreEvictionPolicy" value="LRU"/>	
+    </cache>
+
+    <!-- 新增-->
+  <insert id="saveUser" parameterType="ms.model.User">
+    insert into USER(
+      account,  
+      name, 
+      address
+    ) values (
+      #{account}, 
+      #{name},  
+      #{address}
+    )
+  </insert>
+  
+  <select id="queryAllUser"  resultType="ms.model.User">
+    select  u.id,
+		        u.account,
+		        u.name,
+		        u.address
+    from USER u
+  </select>
+
+  
+</mapper>
