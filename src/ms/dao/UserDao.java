@@ -10,8 +10,6 @@ import ms.model.User;
 
 public class UserDao {
 	
-
-    
     public void add(User user){
     	 SqlSession session = MySessionFactory.getSqlSessionFactory().openSession();
     	   

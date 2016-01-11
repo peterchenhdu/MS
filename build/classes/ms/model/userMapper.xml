@@ -3,6 +3,8 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="UserMapper">
     
+    <!-- 默认的cache <cache />-->
+    <!-- 使用ehcache缓存 -->
     <cache type="org.mybatis.caches.ehcache.LoggingEhcache" >
         <property name="timeToIdleSeconds" value="3600"/><!--1 hour 缓存自创建日期起至失效时的间隔时间-->
 	    <property name="timeToLiveSeconds" value="3600"/><!--1 hour 缓存创建以后，最后一次访问缓存的日期至失效之时的时间间隔-->

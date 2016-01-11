@@ -34,9 +34,9 @@
           dataType : 'json',
           success : function(data) {
             try {
-            	for(var i = 0; i < data.length; i++){
-            		$("#userList").append("<li>account="+data[i].account+",name="+data[i].name+",address="+data[i].address+"</li>");
-            	}
+                for(var i = 0; i < data.length; i++){
+                    $("#userList").append("<li><span style='color:red'>id="+data[i].id+"</span>,account="+data[i].account+",name="+data[i].name+",address="+data[i].address+"</li>");
+                }
             } catch (e) {};
             
           }

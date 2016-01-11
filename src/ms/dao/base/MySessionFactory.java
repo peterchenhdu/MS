@@ -17,7 +17,8 @@ public class MySessionFactory {
 	public static synchronized SqlSessionFactory getSqlSessionFactory(){
 		if(sessionFactory == null){
 			try {
-				return new SqlSessionFactoryBuilder().build(Resources.getResourceAsReader("mybatis-config.xml"));
+				sessionFactory = new SqlSessionFactoryBuilder().build(Resources.getResourceAsReader("mybatis-config.xml"));
+				return sessionFactory;
 			} catch (IOException e) {
 				Logger.getLogger(MySessionFactory.class).error("getSqlSessionFactory error.");
 				e.printStackTrace();

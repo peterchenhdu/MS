@@ -10,6 +10,7 @@ public class User implements Serializable{
 	 * 
 	 */
 	private static final long serialVersionUID = -6190571611246371934L;
+	private Long id;
 	private String account;
 	private String name;
 	private String address;
@@ -30,5 +31,17 @@ public class User implements Serializable{
 	}
 	public void setAddress(String address) {
 		this.address = address;
+	}
+	/**
+	 * @return the id
+	 */
+	public Long getId() {
+		return id;
+	}
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(Long id) {
+		this.id = id;
 	}
 }
